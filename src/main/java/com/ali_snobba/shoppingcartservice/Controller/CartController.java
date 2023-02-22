@@ -26,17 +26,17 @@ public class CartController {
         cartRepo.save(cart);
     }
     
-    @GetMapping("/")
+    @GetMapping("/all")
     public List<Cart> getAllCart(){
         return cartRepo.findAll();
     }
     
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void deleteProductFromCartById(@PathVariable Long id){
         cartRepo.deleteById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/all")
     public void deleteAllProductsFromCart(){
         cartRepo.deleteAll();
     }
